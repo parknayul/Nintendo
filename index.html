@@ -24,6 +24,34 @@
                 e.preventDefault();
             });//a.click
 
+             //헤더 스크롤 방향 감지 이벤트
+             let lastScroll = 0;
+            let scrollTimeout;
+
+            $(window).scroll(function () {
+                let nowScroll = $(this).scrollTop();
+
+
+                if (nowScroll > lastScroll) {
+                    $('header').stop().slideUp(200);
+                } else {
+                    $('header').stop().slideDown(300);
+                }
+
+            });
+
+             //1차메뉴 호버시 2차메뉴 드롭다운
+             let depth01 = $('.header .depth01');
+            let depth02 = $('.header .depth02');
+
+            depth01.mouseenter(function () {
+                $(this).find('.depth02').stop().slideDown();
+            });//depth01.mouseenter
+
+            depth01.mouseleave(function () {
+                depth02.stop().slideUp();
+            });//depth01.mouseenter
+
             //버튼 마우스오버시 이미지변경
             /* let firstImg = document.querySelector(".main_btn .first_img");
             let secondImg = document.querySelector(".main_btn .second_img");
@@ -41,6 +69,8 @@
             let bigItemImage = document.querySelector('.big_item img');
             let bigItemTitle = document.querySelector('.big_item h4');
             let bigItemText = document.querySelector('.big_item .sub_text span');
+            let bigItemStrong = document.querySelector('.big_item .sub_text strong');
+            let bigItemP = document.querySelector('.big_item .sub_text p');
             let bigItemIcon = document.querySelector('.new_software .inner .sub_wrap .util_icon .age')
             let bigItemLang = document.querySelector('.new_software .inner .sub_wrap .util_icon .lang')
 
@@ -49,6 +79,8 @@
             let smallItemImage = document.querySelectorAll('.small_item .item figure img');
             let smallItemTitle = document.querySelectorAll('.small_item h4');
             let smallItemText = document.querySelectorAll('.small_item .sub_text span')
+            let smallItemStrong = document.querySelectorAll('.small_item .sub_text strong')
+            let smallItemP = document.querySelectorAll('.small_item .sub_text p')
             let smallItemIcon = document.querySelectorAll('.small_item  .util_icon .age')
             let smallItemLang = document.querySelectorAll('.small_item .util_icon .lang')
 
@@ -60,6 +92,8 @@
                     bigItemImage.src = smallItemImage[i].src
                     bigItemTitle.innerHTML = smallItemTitle[i].innerHTML
                     bigItemText.innerHTML = smallItemText[i].innerHTML
+                    bigItemStrong.innerHTML = smallItemStrong[i].innerHTML
+                    bigItemP.innerHTML = smallItemP[i].innerHTML
 
                     smallItemImage.forEach((imageStyle) => {
                         imageStyle.style.opacity = '0.3';
@@ -69,22 +103,6 @@
                     bigItemLang.src = smallItemLang[i].src
                 });
             }
-
-            //헤더 스크롤 방향 감지 이벤트
-            let lastScroll = 0;
-            let scrollTimeout;
-
-            $(window).scroll(function () {
-                let nowScroll = $(this).scrollTop();
-
-
-                if (nowScroll > lastScroll) {
-                    $('header').stop().slideUp(100);
-                } else {
-                    $('header').stop().slideDown(200);
-                }
-
-            });
 
             //스크롤시 이벤트 발생
             /*  let main = document.querySelector('.main_bg');
@@ -111,19 +129,6 @@
                  }
              }); *///scroll
 
-            //1차메뉴 호버시 2차메뉴 드롭다운
-            let depth01 = $('.header .depth01');
-            let depth02 = $('.header .depth02');
-
-            depth01.mouseenter(function () {
-                $(this).find('.depth02').stop().slideDown();
-            });//depth01.mouseenter
-
-            depth01.mouseleave(function () {
-                depth02.stop().slideUp();
-            });//depth01.mouseenter
-
-
             //스와이퍼슬라이드 - main_visual
             var swiper = new Swiper(".mySwiper", {
                 spaceBetween: 30,
@@ -132,7 +137,7 @@
                     clickable: true,
                 },
                 autoplay: {
-                    delay: 2000,
+                    delay: 3000,
                     disableOnInteraction: false,
                 },
             });
@@ -158,7 +163,7 @@
                         slidesPerView: 4,
                         spaceBetween: 20,
                     },
-                    1024: {
+                    1020: {
                         slidesPerView: 3,
                         spaceBetween: 20,
                     },
@@ -193,7 +198,9 @@
                 <ul class="gnb">
                     <li class="depth01">
                         <a href="#"><img src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon(white).png"
-                                alt="본체 및 아미보 로고"><span>본체 및 amibo</span></a>
+                                alt="본체 및 아미보 로고">
+                                <img class="hover_img" src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon_hover.png" alt="">
+                                <span>본체 및 amibo</span></a>
                         <ul class="depth02">
                             <div class="depth02_wrap">
                                 <li><a href="#"><img src="img/Nintendo_Switch_Logo.svg.png"
@@ -205,7 +212,9 @@
 
                     <li class="depth01">
                         <a href="#"><img src="img/free-icon-direction-12940375(white).png"
-                                alt="본체 및 아미보 로고"><span>소프트웨어</span></a>
+                                alt="본체 및 아미보 로고">
+                                <img class="hover_img" src="img/free-icon-direction-12940375_hover.png" alt="">
+                                <span>소프트웨어</span></a>
                         <ul class="depth02">
                             <div class="depth02_wrap">
                                 <li><a href="#"><img src="img/free-icon-nintendo-switch-2420214.png"
@@ -216,7 +225,9 @@
                     </li><!-- .depth01 end -->
 
                     <li class="depth01">
-                        <a href="#"><img src="img/iconmonstr-newspaper-13-240(white).png" alt="뉴스"><span>News</span></a>
+                        <a href="#"><img src="img/iconmonstr-newspaper-13-240(white).png" alt="뉴스">
+                            <img class="hover_img" src="img/iconmonstr-newspaper-13-240_hover.png" alt="">
+                            <span>News</span></a>
                         <ul class="depth02">
                             <div class="depth02_wrap">
                                 <li><a href="#">
@@ -269,7 +280,9 @@
                     </li><!-- .depth01 end -->
 
                     <li class="depth01">
-                        <a href="#"><img src="img/캐릭터(white).png" alt="캐릭터"><span>캐릭터</span></a>
+                        <a href="#"><img src="img/캐릭터(white).png" alt="캐릭터">
+                            <img class="hover_img" src="img/캐릭터_hover.png" alt="">
+                            <span>캐릭터</span></a>
                         <ul class="depth02">
                             <div class="depth02_wrap">
                                 <li><a href="#">
@@ -307,7 +320,9 @@
                     </li><!-- .depth01 end -->
 
                     <li class="depth01">
-                        <a href="#"><img src="img/icons8-스패너-24(white).png" alt="고객지원"><span>고객지원</span></a>
+                        <a href="#"><img src="img/icons8-스패너-24(white).png" alt="고객지원">
+                            <img class="hover_img" src="img/icons8-스패너-24_hover.png" alt="">
+                            <span>고객지원</span></a>
                         <ul class="depth02">
                             <div class="depth02_wrap">
                                 <li><a href="#">
@@ -352,10 +367,192 @@
 
                     <li class="depth01">
                         <a href="#"><img src="img/free-icon-remove-cart-7756009.png"
-                                alt="본체 및 아미보 로고"><span>온라인스토어</span></a>
+                                alt="본체 및 아미보 로고">
+                                <img class="hover_img" src="img/free-icon-remove-cart-7756009_hover.png" alt="">
+                                <span>온라인스토어</span></a>
                     </li><!-- .depth01 end -->
                 </ul><!-- .gnb end -->
             </nav><!-- .gnb_pc -->
+            
+            <nav class="gnb_mobile mobile">
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#"><img src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon(white).png"
+                                alt="본체 및 아미보 로고">
+                                <img class="hover_img" src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon_hover.png" alt="">
+                                <span>본체 및 amibo</span></a>
+                        <ul class="depth02">
+                            <div class="depth02_wrap">
+                                <li><a href="#"><img src="img/Nintendo_Switch_Logo.svg.png"
+                                            alt="스위치 로고" /><span>본체</span></a></li>
+                                <li><a href="#"><img src="img/amibo.jpg" alt="스위치 로고" /><span>amibo</span></a></li>
+                            </div><!-- .depth02_wrap end -->
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#"><img src="img/free-icon-direction-12940375(white).png"
+                                alt="본체 및 아미보 로고">
+                                <img class="hover_img" src="img/free-icon-direction-12940375_hover.png" alt="">
+                                <span>소프트웨어</span></a>
+                        <ul class="depth02">
+                            <div class="depth02_wrap">
+                                <li><a href="#"><img src="img/free-icon-nintendo-switch-2420214.png"
+                                            alt="닌텐도스위치 소프트웨어" /><span>NintendoSwitch<br>소프트웨어</span></a></li>
+                                <li><a href="#"><img src="img/스마트폰.png" alt="스위치 로고" /><span>스마트폰용 앱</span></a></li>
+                            </div>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#"><img src="img/iconmonstr-newspaper-13-240(white).png" alt="뉴스">
+                            <img class="hover_img" src="img/iconmonstr-newspaper-13-240_hover.png" alt="">
+                            <span>News</span></a>
+                        <ul class="depth02">
+                            <div class="depth02_wrap">
+                                <li><a href="#">
+                                        <div class="thumb">
+                                            <img src="img/마리오데이(news).jpg" alt="마리오데이" />
+                                        </div><!-- .thumb end -->
+                                        <p class="title">3월 10일은 마리오 데이! 더욱 더 풍성해진 마리오와 친구들의 모험.</p>
+                                        <p class="status"><span>news</span> / <span>2024.2.27</span></p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="thumb">
+                                            <img src="img/news2.jpg" alt="news 두번째" />
+                                        </div><!-- .thumb end -->
+                                        <p class="title">『포에버 블루 루미너스』, 『수박게임 2인 플레이 모드 추가 팩』, 『진・여신전생5 Vengeance』,
+                                            『유니콘
+                                            오버로드』 등, Nintendo Switch로 발매되는 타이틀의 최신 정보를 소개!</p>
+                                        <p class="status"><span>news</span> / <span>2024.2.21</span></p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="thumb">
+                                            <img src="img/스플래툰3(news).jpg" alt="스플래툰3 news" />
+                                        </div><!-- .thumb end -->
+                                        <p class="title">『스플래툰 3』 뉴 시즌 「2024 봄 Fresh Season」은 3월 1일부터 개막합니다.</p>
+                                        <p class="status"><span>news</span> / <span>2024.2.28</span></p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="thumb">
+                                            <img src="img/스플래툰3(news) 4위.jpg" alt="스플래툰3 4위" />
+                                        </div><!-- .thumb end -->
+                                        <p class="title">『스플래툰 3』 최강의 어린이팀을 가려보자! 용산 아이파크몰에서 「스플래툰 3 초등・중등부 대회」 개최!
+                                        </p>
+                                        <p class="status"><span>news</span> / <span>2024.3.4</span></p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="thumb">
+                                            <img src="img/피치공주(news).jpg" alt="피치공주" />
+                                        </div><!-- .thumb end -->
+                                        <p class="title">Nintendo Switch 소프트웨어 『프린세스 피치 Showtime!』 패키지 버전 예약 및 조기 구입
+                                            특전 안내</p>
+                                        <p class="status"><span>news</span> / <span>2024.2.16</span></p>
+                                    </a></li>
+                                <div class="depth02_bottom">
+                                    <a href="#">
+                                        <img src="img/icons8-원-셰브론-오른쪽-48.png" alt="아이콘" />
+                                        News 목록
+                                    </a>
+                                </div><!-- .depth02_bottom end -->
+                            </div>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#"><img src="img/캐릭터(white).png" alt="캐릭터">
+                            <img class="hover_img" src="img/캐릭터_hover.png" alt="">
+                            <span>캐릭터</span></a>
+                        <ul class="depth02">
+                            <div class="depth02_wrap">
+                                <li><a href="#">
+                                        <div class="character">
+                                            <img src="img/마리오.png" alt="마리오" />
+                                            <p class="text">마리오</p>
+                                        </div><!-- .character end -->
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="character">
+                                            <img src="img/젤다.png" alt="젤다" />
+                                            <p class="text">젤다</p>
+                                        </div><!-- .character end -->
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="character">
+                                            <img src="img/별의커비.png" alt="커비" />
+                                            <p class="text">별의커비</p>
+                                        </div><!-- .character end -->
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="character">
+                                            <img src="img/스플래툰.png" alt="스플래툰" />
+                                            <p class="text">스플래툰</p>
+                                        </div><!-- .character end -->
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="character">
+                                            <img src="img/피크민.jpg" alt="피크민" />
+                                            <p class="text">피크민</p>
+                                        </div><!-- .character end -->
+                                    </a></li>
+                            </div>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#"><img src="img/icons8-스패너-24(white).png" alt="고객지원">
+                            <img class="hover_img" src="img/icons8-스패너-24_hover.png" alt="">
+                            <span>고객지원</span></a>
+                        <ul class="depth02">
+                            <div class="depth02_wrap">
+                                <li><a href="#">
+                                        <div class="support">
+                                            <img src="img/스위치(고객지원).gif" alt="닌텐도 스위치 고객지원">
+                                        </div><!-- .support end -->
+                                        <p class="text">Nintendo Switch 고객지원</p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="support">
+                                            <img src="img/닌텐도3DS(고객지원).gif" alt="닌텐도 3DS 고객지원">
+                                        </div><!-- .support end -->
+                                        <p class="text">닌텐도 3DS 고객지원</p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="support">
+                                            <img src="img/온라인수리접수.gif" alt="온라인 수리접수">
+                                        </div><!-- .support end -->
+                                        <p class="text">온라인 수리접수</p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="support">
+                                            <img src="img/스위치온라인서포트(고객지원).gif" alt="스위치온라인서포트">
+                                        </div><!-- .support end -->
+                                        <p class="text">Nintendo Switch <br>online 서포트</p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="support">
+                                            <img src="img/네트워크장애(고객지원).gif" alt="네트워크장애">
+                                        </div><!-- .support end -->
+                                        <p class="text">네트워크 장애<br>발생 상황</p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="support">
+                                            <img src="img/닌텐도온라인e숍(고객지원).gif" alt="닌텐도e숍">
+                                        </div><!-- .support end -->
+                                        <p class="text">닌텐도 e숍</p>
+                                    </a></li>
+                            </div>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#"><img src="img/free-icon-remove-cart-7756009.png"
+                                alt="본체 및 아미보 로고">
+                                <img class="hover_img" src="img/free-icon-remove-cart-7756009_hover.png" alt="">
+                                <span>온라인스토어</span></a>
+                    </li><!-- .depth01 end -->
+                </ul><!-- .gnb end -->
+            </nav><!-- .gnb_mobile -->
         </header><!-- .header end -->
 
         <main id="main">
@@ -456,12 +653,18 @@
                     <img src="img/어나더코드.jpg" alt="어나더코드 타이틀" />
                 </div><!-- .main_title -->
                 <div class="main_btn">
-                    <a href="#">
-                        <img class="first_img" src="img/2개의기억.png" alt="2개의 기억 버튼" />
-                    </a>
-                    <a href="#">
-                        <img class="second_img" src="img/기억의문.jpg" alt="기억의 문 버튼" />
-                    </a>
+                    <div class="first_btn">
+                        <a href="#">
+                            <img class="first_img" src="img/2개의기억.png" alt="2개의 기억 버튼" />
+                            <img class="first_hover" src="img/2개의기억오버.png" alt="2개의 기억 호버">
+                        </a>
+                    </div><!-- .first_btn -->
+                    <div class="second_btn">
+                        <a href="#">
+                            <img class="second_img" src="img/기억의문.jpg" alt="기억의 문 버튼" />
+                            <img class="second_hover" src="img/기억의문오버.png" alt="기억의 문 호버">
+                        </a>
+                    </div><!-- .second_btn end -->
                 </div><!-- .main_btn -->
                 <div class="trial_btn">
                     <a href="#">
@@ -487,9 +690,11 @@
         <!-- mobile 980 -->
         <div class=".main_banner mobile">
             <div class="main_banner">
-                <figure>
-                    <img src="img/Magento_1920_700.png" alt="어나더코드 모바일이미지">
-                </figure>
+                <a href="#">
+                    <figure>
+                        <img src="img/Magento_1920_700.png" alt="어나더코드 모바일이미지">
+                    </figure>
+                </a>
             </div><!-- .main_banner -->
         </div><!-- .main_banner mobile  -->
 
@@ -522,8 +727,8 @@
                             <div class="sub_wrap">
                                 <div class="sub_text">
                                     <span>Nintendo Switch</span>
-                                    <span>한국닌텐도</span>
-                                    <span>패키지 버전/다운로드버전</span>
+                                    <strong>한국닌텐도</strong>
+                                    <p>패키지 버전/다운로드버전</p>
                                 </div><!-- .sub_text -->
                                 <div class="util_icon">
                                     <img class="age" src="img/12세이용가.svg" alt="연령아이콘" />
@@ -548,8 +753,8 @@
                             <div class="sub_wrap">
                                 <div class="sub_text">
                                     <span>Nintendo Switch</span>
-                                    <span>한국닌텐도</span>
-                                    <span>패키지 버전/다운로드버전</span>
+                                    <strong>한국닌텐도</strong>
+                                    <p>패키지 버전/다운로드버전</p>
                                 </div><!-- .sub_text -->
                                 <div class="util_icon">
                                     <img class="age" src="img/12세이용가.svg" alt="연령아이콘" />
@@ -572,8 +777,8 @@
                             <div class="sub_wrap">
                                 <div class="sub_text">
                                     <span>Nintendo Switch</span>
-                                    <span>한국닌텐도</span>
-                                    <span>패키지 버전/다운로드버전</span>
+                                    <strong>한국닌텐도</strong>
+                                    <p>패키지 버전/다운로드버전</p>
                                 </div><!-- .sub_text -->
                                 <div class="util_icon">
                                     <img class="age" src="img/icn-grac_all.svg" alt="연령아이콘" />
@@ -596,8 +801,8 @@
                             <div class="sub_wrap">
                                 <div class="sub_text">
                                     <span>Nintendo Switch</span>
-                                    <span>한국닌텐도</span>
-                                    <span>패키지 버전/다운로드버전</span>
+                                    <strong>한국닌텐도</strong>
+                                    <p>패키지 버전/다운로드버전</p>
                                 </div><!-- .sub_text -->
                                 <div class="util_icon">
                                     <img class="age" src="img/icn-grac_all.svg" alt="연령아이콘" />
@@ -620,8 +825,8 @@
                             <div class="sub_wrap">
                                 <div class="sub_text">
                                     <span>Nintendo Switch</span>
-                                    <span>한국닌텐도</span>
-                                    <span>패키지 버전/다운로드버전</span>
+                                    <strong>한국닌텐도</strong>
+                                    <p>패키지 버전/다운로드버전</p>
                                 </div><!-- .sub_text -->
                                 <div class="util_icon">
                                     <img src="img/icn-grac_all.svg" alt="연령아이콘" />
@@ -644,8 +849,8 @@
                             <div class="sub_wrap">
                                 <div class="sub_text">
                                     <span>Nintendo Switch</span>
-                                    <span>한국닌텐도</span>
-                                    <span>패키지 버전/다운로드버전</span>
+                                    <strong>한국닌텐도</strong>
+                                    <p>패키지 버전/다운로드버전</p>
                                 </div><!-- .sub_text -->
                                 <div class="util_icon">
                                     <img src="img/icn-grac_all.svg" alt="연령아이콘" />
@@ -668,8 +873,8 @@
                             <div class="sub_wrap">
                                 <div class="sub_text">
                                     <span>Nintendo Switch</span>
-                                    <span>한국닌텐도</span>
-                                    <span>패키지 버전/다운로드버전</span>
+                                    <strong>한국닌텐도</strong>
+                                    <p>패키지 버전/다운로드버전</p>
                                 </div><!-- .sub_text -->
                                 <div class="util_icon">
                                     <img src="img/icn-grac_all.svg" alt="연령아이콘" />
@@ -924,7 +1129,7 @@
              <div class="inner">
                     <div class="title_sect">
                         <h4>News&update</h4>
-                        <h1>닌텐도의 새로운<br>소식을 만나보세요!</h1>
+                        <h1>닌텐도의 새로운 소식을 만나보세요!</h1>
                         <a href="#">
                             <p>view more</p>
                         </a>
@@ -1041,7 +1246,9 @@
                     </div><!-- .youtube -->
                 </div><!-- .sns_btn end -->
 
-                <div class="footter_wrap">
+            </div><!-- .inner end -->
+            <div class="footter_wrap">
+                <div class="inner">
                     <div class="footer_info">
                         <div class="terms">
                             <a href="#">이용약관</a>
@@ -1061,8 +1268,8 @@
                             사업자등록번호 : 120-87-03578
                         </div>
                     </address>
-                </div><!-- .footter_wrap end -->
-            </div><!-- .inner end -->
+                </div>
+            </div><!-- .footter_wrap end -->
         </footer><!-- .footer end -->
     </div><!-- #wrap end -->
 </body>
