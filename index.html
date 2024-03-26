@@ -33,9 +33,9 @@
 
 
                 if (nowScroll > lastScroll) {
-                    $('header').stop().slideUp(200);
+                    $('header').stop().slideUp(50);
                 } else {
-                    $('header').stop().slideDown(300);
+                    $('header').stop().slideDown(200);
                 }
 
             });
@@ -96,8 +96,9 @@
                     bigItemP.innerHTML = smallItemP[i].innerHTML
 
                     smallItemImage.forEach((imageStyle) => {
-                        imageStyle.style.opacity = '0.3';
+                    imageStyle.style.opacity = '0.3';
                     });//forEach
+                    
                     smallItemImage[i].style.opacity = '1';
                     bigItemIcon.src = smallItemIcon[i].src
                     bigItemLang.src = smallItemLang[i].src
@@ -1188,6 +1189,12 @@
                 <img src="img/닌텐도 선불번호.gif" alt="닌텐도 e-shop">
             </a>
         </div><!-- .eshop_banner -->
+
+        <div class="top_btn">
+            <a href="#">
+                <img src="img/" alt="">
+            </a>
+        </div><!-- .top_btn -->
 
         <footer class="footer" id="footer">
             <div class="inner">
