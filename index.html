@@ -19,10 +19,6 @@
     <!-- Initialize Swiper -->
     <script>
         $(function () {
-            /* 링크 방지 */
-            $('a').click(function (e) {
-                e.preventDefault();
-            });//a.click
 
              //헤더 스크롤 방향 감지 이벤트
              let lastScroll = 0;
@@ -156,12 +152,17 @@
                 },
 
                 breakpoints: {
-                    640: {
-                        slidesPerView: 2,
+                    580: {
+                        slidesPerView: 1,
                         spaceBetween: 10,
                     },
-                    768: {
-                        slidesPerView: 4,
+
+                    657: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    767: {
+                        slidesPerView: 3,
                         spaceBetween: 20,
                     },
                     1020: {
@@ -711,7 +712,9 @@
                 </div>
             </div><!-- .mario_img end -->
             <div class="inner">
-                <a href=""><span>더보기</span></a>
+                <div class="pcver_btn">
+                    <a href="#"><span>더보기</span></a>
+                </div><!-- .pcver_btn end -->
                 <div class="list">
                     <div class="big_item">
                         <figure>
@@ -885,6 +888,9 @@
                         </div><!-- .item end -->
                     </div><!-- .small_item -->
                 </div><!-- .list -->
+                <div class="mobilever_btn">
+                    <a href="#"><button>더보기</button></a>
+                </div><!-- .mobilever_btn end -->
             </div><!-- .inner -->
         </section><!-- new_software -->
 

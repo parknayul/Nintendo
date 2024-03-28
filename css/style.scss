@@ -19,9 +19,14 @@ html, body {
 body {
     line-height: 1;
     color: #333;
+    overflow-x: hidden;
 }
 
 .mobile {
+    display: none;
+}
+
+.mobilever_btn {
     display: none;
 }
 
@@ -354,12 +359,11 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 5rem;
+        gap: 8rem;
         overflow: hidden;
 
         figure {
-            max-height: 180px;
-            height: 9.72vw;
+
             img {
                 width: 100%;
                 height: 100%;
@@ -376,6 +380,8 @@ body {
     }
         .switch_oled{
             order: 1;
+            max-width: 350px;
+            width: 27.3%;
             figure {
                 max-height: 450px;
                 height: 35.25vw;
@@ -386,8 +392,23 @@ body {
                 }
             }
         }
+
+        .switch {
+            max-width: 375px;
+            width: 26.04%;
+            figure{
+                max-height: 180px;
+                height: 12.5vw;
+            }
+        }
         .switch_lite {
             order: 2;
+            max-width: 300px;
+            width: 20.83%;
+            figure {
+                max-height: 130px;
+                height: 10.5vw;
+            }
         }
         .name {
             margin-top: 4rem;
@@ -567,6 +588,7 @@ body {
         height: 7.9vw;
         img {
             width: 100%;
+            height: 100%;
         }
         h2 {
             font-size: 12em;
@@ -732,6 +754,7 @@ body {
         height: 7.9vw;
         img {
             width: 100%;
+            height: 100%;
         }
     }
     h2 {
@@ -866,6 +889,7 @@ body {
         height: 7.9vw;
         img {
             width: 100%;
+            height: 100%;
         }
     }
     h2 {
@@ -883,11 +907,9 @@ body {
 
     .swiper {
         width: 90%;
+        position: static;    
     }
 
-    .popular {
-        position: static;
-    }
     .swiper-pagination-bullets {
         display: none;
     }
@@ -915,14 +937,13 @@ body {
         }
     }
     .swiper-button-next {
-        top:64%;
+        top:65%;
         right: 14%;
-        background: url(../img/btn.png) no-repeat;
+        background: url(../img/next_btn.png) no-repeat;
         background-size: 100% auto;
-        transform: rotate(180deg);
     }
     .swiper-button-prev {
-        top:64%;
+        top:65%;
         left: 14%;
         background: url(../img/btn.png) no-repeat;
         background-size: 100% auto;
@@ -1002,7 +1023,8 @@ body {
             border-top: 2px solid #999999;
         }
         .img_sect {
-            width: 250px;
+            max-width: 250px;
+            width: 50%;
             figure {
                 max-height: 160px;
                 height: 10.11vw;
@@ -1014,7 +1036,8 @@ body {
             }
         }
         .text_sect {
-            width: 700px;
+            max-width: 700px;
+            width: 70%;
             font-family: 'Sunflower';
             line-height: 1.5;
             p {
@@ -1046,6 +1069,9 @@ body {
             font-size: 1.8rem;
             padding-right: 20px;
             width: 20%;
+            span {
+                font-weight: bold;
+            }
         }
         .notice_body {
             padding: 10px 0 10px 44px;
@@ -1246,11 +1272,9 @@ body {
         width: 55px;
     }
     .popular_item .inner .swiper-button-next {
-        top:60%;
         right: 4%;
     }
     .popular_item .inner .swiper-button-prev {
-        top:60%;
         left:4%;
     }
 
@@ -1263,7 +1287,7 @@ body {
     }
 
     .news .inner .news_list .news_wrap {
-        gap: 0;
+        gap: 1rem;
     }
     
 }/* 1240px */
@@ -1359,6 +1383,20 @@ body {
         content: url(../img/right_btn.png);
         vertical-align: middle;
         margin-right: 0.5rem;
+
+
+    }
+
+    .cont01 .outer {
+        height: 535px;
+    }
+
+    .cont01 .outer .outer_logo img {
+        height: 110px;
+    }
+
+    .cont01 .outer .switch_lite {
+        width: 23.83%;
     }
 
     .cont01 .outer .switch_wrap a :hover img {
@@ -1367,6 +1405,10 @@ body {
 
     .cont01 .outer .name {
         font-size: 1.8rem;
+    }
+
+    .new_software .inner {
+        margin: 3rem auto;
     }
 
     .new_software .mario_img img {
@@ -1395,8 +1437,17 @@ body {
         margin-top: 10rem;
     }
 
+    .new_software .mario_img {
+        display: none;
+    }
+
+    .new_software .title_img {
+        height: 11.04vw;
+    }
+
     .new_software .title_img h2 {
-        font-size: 7rem;
+        font-size: 6rem;
+        top:4%;
     }
 
     .new_software .inner .list {
@@ -1448,9 +1499,13 @@ body {
         margin-top: 10rem;
     }
 
+    .sale_plan .title_wrap .title_img {
+        height: 11.04vw;
+    }
+
     .sale_plan .title_wrap h2 {
-        font-size: 7rem;
-        top: 1%;
+        font-size: 6rem;
+        top: 2%;
         right: 8%;
     }
 
@@ -1500,8 +1555,13 @@ body {
         margin-top: 10rem;
     }
 
+    .popular_item .title_wrap .title_img {
+        height: 11.04vw;
+    }
+
     .popular_item .title_wrap h2 {
-        font-size: 7rem;
+        font-size: 6rem;
+        top:5%
     }
 
     .popular_item .inner {
@@ -1568,6 +1628,9 @@ body {
 }/* 1024px */
 
 @media screen and (max-width:960px) {
+    .cont01 {
+        margin-top: 16rem;
+    }
     .cont01 .outer .switch_wrap {
         flex-direction: column;
     }
@@ -1576,22 +1639,47 @@ body {
         order: -1;
     }
 
-    .cont01 .outer .switch_wrap figure {
-        height: 48.72vw;
+    .cont01 .outer .switch {
+        width: 37.04%;
     }
+
+    .cont01 .outer .switch figure {
+        height: 17.5vw;
+    }
+
+    .cont01 .outer .switch_lite figure {
+        height: 13.5vw;
+    }
+
+    .cont01 .outer .switch_lite {
+        width: 42.83%;
+    }
+
+    .cont01 .outer .switch_lite figure {
+        height: 16.83vw;
+    }
+
 
     .cont01 .outer {
         height: 1300px;
     }
 
+    .new_software {
+        margin-top: 7rem;
+    }
+
     .new_software .title_img {
-        width: 114vw;
+        width: 67.72%;
         height: 11.04vw;
     }
 
     .new_software .title_img h2 {
-        top: 5%;
-        left: 30%;
+        top: 2%;
+        left: 20%;
+    }
+
+    .new_software .inner {
+        margin: 3rem auto;
     }
 
     .new_software .inner .list .big_item {
@@ -1599,7 +1687,8 @@ body {
     }
 
     .new_software .inner .small_item .item {
-        width: 290px;
+        max-width: 290px;
+        width: 30.20%;
     }
 
     .new_software .inner .small_item .item .main_text h4 {
@@ -1629,9 +1718,18 @@ body {
         display: flex;
         justify-content: space-between;
     }
+    
 
     .new_software .inner a span {
-        margin-right: 0;
+        margin-right: 1.8rem;
+    }
+
+    .sale_plan {
+        margin-top: 7rem;
+    }
+
+    .sale_plan .inner {
+        margin: 3rem auto;
     }
 
     .sale_plan .inner .list .item {
@@ -1640,5 +1738,308 @@ body {
 
     .sale_plan .inner .list .item figure {
         height: 27.13vw;
+    }
+
+    .sale_plan .title_wrap h2 {
+        font-size: 6rem;
+        top: 1%;
+        right: 8%;
+    }
+
+    .sale_plan .inner .more_view img {
+        width: 230px;
+    }
+
+    .popular_item {
+        margin-top: 7rem;
+    }
+
+    .popular_item .inner {
+        margin: 3rem auto;
+    }
+
+    .popular_item .title_wrap h2 {
+        font-size: 6rem;
+        top:5%;
+        left: 20%;
+    }
+    
+    .popular_item .inner .swiper-slide figure {
+        height: 17.09vw;
+    }
+
+    .popular_item .inner .swiper-slide .name h3 {
+        font-size: 1.6rem;
+    }
+
+    .notice .inner .notice_body .notice_txt {
+        font-size: 1.5rem;
+    }
+}/* 960px */
+
+/* 836px 시작 */
+@media screen and (max-width:836px) {
+    .new_software .title_img h2 {
+        top:1%;
+    }
+    .popular_item .title_wrap h2 {
+        top:4%
+    }
+
+    .notice .inner .notice_body .notice_txt {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .main_visual .swiper-horizontal > .swiper-pagination-bullets, .main_visual .swiper-pagination-bullets.swiper-pagination-horizontal, .main_visual .swiper-pagination-custom, .main_visual .swiper-pagination-fraction{
+        bottom: -12.5rem;
+    }
+
+    .main_visual .swiper-pagination-bullet:first-child {
+        background: url(../img/어나더코드_아이콘.jpg);
+        width: 15.64%;
+        max-height: 120px;
+        height: 15.64vw;
+        border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: none;
+        border: 1px solid #333;
+    }
+
+    .main_visual .swiper-pagination-bullet:first-child::before {
+        border-radius: 50%;
+    }
+    .main_visual .swiper-pagination-bullet:nth-child(2) {
+        background: url(../img/스플래툰3_아이콘.jpg);
+        width: 15.64%;
+        max-height: 120px;
+        height: 15.64vw;
+        border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: none;
+        border: 1px solid #333;
+    }
+
+    .main_visual .swiper-pagination-bullet:nth-child(2)::before {
+        border-radius: 50%;
+    }
+
+    .main_visual .swiper-pagination-bullet:nth-child(3) {
+        background: url(../img/마리오원더브라더스_아이콘.jpg);
+        width: 15.64%;
+        max-height: 120px;
+        height: 15.64vw;
+        border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: none;
+        border: 1px solid #333;
+    }
+
+    .main_visual .swiper-pagination-bullet:nth-child(3)::before {
+        border-radius: 50%;
+    }
+
+    .main_visual .swiper-pagination-bullet:nth-child(4) {
+        background: url(../img/마리오vs동키콩_아이콘.jpg);
+        width: 15.64%;
+        max-height: 120px;
+        height: 15.64vw;
+        border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: none;
+        border: 1px solid #333;
+    }
+
+    .main_visual .swiper-pagination-bullet:nth-child(4)::before {
+        border-radius: 50%;
+    }
+
+    .main_visual .swiper-pagination-bullet:nth-child(5) {
+        background: url(../img/슈퍼마리오RPG_아이콘.jpg);
+        width: 15.64%;
+        max-height: 120px;
+        height: 15.64vw;
+        border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: none;
+        border: 1px solid #333;
+    }
+
+    .main_visual .swiper-pagination-bullet:nth-child(5)::before{
+        border-radius: 50%;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+        display: flex;
+        justify-content: space-between;
+    }
+    .main_visual .swiper-horizontal > .swiper-pagination-bullets, .main_visual .swiper-pagination-bullets.swiper-pagination-horizontal, .main_visual .swiper-pagination-custom, .main_visual .swiper-pagination-fraction{
+        bottom: -13.5rem;
+    }
+
+    .new_software .title_img {
+        width: 85.72%;
+    }
+
+    .new_software .inner .small_item .item {
+        width: 39.2%;
+    }
+
+    .new_software .inner .small_item .item figure {
+        height: 18.02vw;
+    }
+
+    .new_software .inner a span {
+        display: none;
+    }
+
+    .mobilever_btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .mobilever_btn button {
+        font-size: 1.5rem;
+        width: 150px;
+        height: 40px;
+        border-radius: 15px;
+        color: #fff;
+        background-color: #e60012;
+        margin-top: 3rem;
+        position: relative;
+    }
+
+    .mobilever_btn button::after {
+        display: block;
+        content: '';
+        background: url(../img/icons8-원-셰브론-오른쪽-64.png);
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top:50%;
+        right:27px;
+        transform: translateY(-50%);
+    }
+
+    .cont01 .outer .switch_oled {
+        width: 46.3%;   
+    }
+
+    .cont01 .outer .switch_oled figure {
+        height: 59.25vw;
+    }
+    
+
+    .cont01 .outer .switch {
+        width: 68.3%
+    }
+
+    .cont01 .outer .switch figure {
+        height: 32.5vw;
+    }
+
+    .cont01 .outer .switch_lite {
+        width: 49.83%;
+    }
+
+    .cont01 .outer .switch_lite figure {
+        height: 21.5vw;
+    }
+
+    .sale_plan .title_wrap .title_img {
+        width: 85.72%;
+    }
+    .popular_item .title_wrap .title_img{
+        width: 85.72%;
+    }
+
+    .popular_item .inner .swiper-slide figure {
+        height: 18.09vw;
+    }
+
+    .news .inner .news_list .text_sect p {
+        font-size: 1.5rem;
+    }
+
+    .notice .inner .notice_headline {
+        font-size: 1.6rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .notice .inner {
+        flex-direction: column;
+    }
+
+    .notice .inner .notice_body {
+        border-left: none;
+    }
+
+    .footer .inner .bottom_nav .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .inner .bottom_nav .nav > li > a::before {
+        display: none;
+    }
+
+    .footer .inner .bottom_nav .nav > li .sub_nav {
+        display: none;
+    }
+
+    .footer .inner .bottom_nav .nav > li {
+        padding: 20px 0;
+        border-bottom: 1px solid #333;
+        width: 80%;
+    }
+
+    .footer .inner .bottom_nav .nav > li > a::after {
+        content: '';
+        background: url(../img/icons8-원-셰브론-아래로-50.png);
+        display: block;
+        position: absolute;
+        top:0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .footer .inner .bottom_nav .nav > li > a {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .footer .inner .link_btn {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .inner .link_btn .my_nintendo {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .cont01 .outer {
+        height: 1170px;
+    }
+
+    .new_software .title_img {
+        width: 104.72%;
+        height: 15.04vw;
     }
 }
