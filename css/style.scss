@@ -19,7 +19,6 @@ html, body {
 body {
     line-height: 1;
     color: #333;
-    overflow-x: hidden;
 }
 
 .mobile {
@@ -1435,6 +1434,7 @@ body {
 
     .new_software {
         margin-top: 10rem;
+        overflow-x: hidden;
     }
 
     .new_software .mario_img {
@@ -1497,6 +1497,7 @@ body {
 
     .sale_plan {
         margin-top: 10rem;
+        overflow-x: hidden;
     }
 
     .sale_plan .title_wrap .title_img {
@@ -1553,6 +1554,7 @@ body {
 
     .popular_item {
         margin-top: 10rem;
+        overflow-x: hidden;
     }
 
     .popular_item .title_wrap .title_img {
