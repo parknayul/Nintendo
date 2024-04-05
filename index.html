@@ -80,16 +80,11 @@
 
             //모바일 푸터 아코디언 메뉴
             $('.footer .inner .bottom_nav .nav > li > a').click(function(){
-                if($(this).next().css('display') === 'none') {
-                    //alert()
-                    $('.footer .inner .bottom_nav .nav > li .sub_nav').slideUp();
-
-                    $(this).next().slideDown();
-                } else {
-                    $(this).next().slideUp();
-                    //$(this).removeClass('on');
-                }
-            })
+                //slicdeToggle()
+                event.preventDefault();
+                $(this).next().slideToggle();
+                $(this).toggleClass('on');
+            });
 
 
 
