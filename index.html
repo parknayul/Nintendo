@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.scss">
 
     <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -19,7 +20,6 @@
     <!-- Initialize Swiper -->
     <script>
         $(function () {
-
              //헤더 스크롤 방향 감지 이벤트
              let lastScroll = 0;
             let scrollTimeout;
@@ -47,6 +47,36 @@
             depth01.mouseleave(function () {
                 depth02.stop().slideUp();
             });//depth01.mouseenter
+
+            //모바일 버튼 클릭시 메뉴 나타나기
+            $(document).ready(function(){
+            $('.mobile-btn').click(function(){
+                if ($('.gnb_mobile').css('left') === '0px') {
+                    $('.gnb_mobile').animate({
+                        left : '-100%'
+                    }, 300, 'easeInOutCirc');
+                    $('body').removeClass('on');
+                } else {
+                    $('.gnb_mobile').animate({
+                        left : '0'
+                    }, 300, 'easeInOutCirc');
+                    $('body').addClass('on');
+                }
+            });
+        });//mobile button click end
+
+            //모바일 아코디언메뉴
+            $('.header .mobile_depth01>a').click(function(){
+                if($(this).next().css('display') === 'none') {
+                    //alert()
+                    $('.header .mobile_depth02').slideUp();
+
+                    $(this).next().slideDown();
+                } else {
+                    $(this).next().slideUp();
+                    //$(this).removeClass('on');
+                }
+            });//header03
 
             //버튼 마우스오버시 이미지변경
             /* let firstImg = document.querySelector(".main_btn .first_img");
@@ -197,7 +227,7 @@
             </button><!-- .mobile-btn end -->
 
             <nav class="gnb_pc pc">
-                <ul class="gnb">
+                <ul class="pc_gnb">
                     <li class="depth01">
                         <a href="#"><img src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon(white).png"
                                 alt="본체 및 아미보 로고">
@@ -377,28 +407,28 @@
             </nav><!-- .gnb_pc -->
             
             <nav class="gnb_mobile mobile">
-                <ul class="gnb">
-                    <li class="depth01">
+                <ul class="mobile_gnb">
+                    <li class="mobile_depth01">
                         <a href="#"><img src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon(white).png"
                                 alt="본체 및 아미보 로고">
                                 <img class="hover_img" src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon_hover.png" alt="">
                                 <span>본체 및 amibo</span></a>
-                        <ul class="depth02">
-                            <div class="depth02_wrap">
+                        <ul class="mobile_depth02">
+                            <div class="mobile_depth02_wrap">
                                 <li><a href="#"><img src="img/Nintendo_Switch_Logo.svg.png"
                                             alt="스위치 로고" /><span>본체</span></a></li>
                                 <li><a href="#"><img src="img/amibo.jpg" alt="스위치 로고" /><span>amibo</span></a></li>
-                            </div><!-- .depth02_wrap end -->
-                        </ul><!-- .depth02 end -->
+                            </div><!-- .mobile_depth02_wrap end -->
+                        </ul><!-- .mobile_depth02 end -->
                     </li><!-- .depth01 end -->
 
-                    <li class="depth01">
+                    <li class="mobile_depth01">
                         <a href="#"><img src="img/free-icon-direction-12940375(white).png"
                                 alt="본체 및 아미보 로고">
                                 <img class="hover_img" src="img/free-icon-direction-12940375_hover.png" alt="">
                                 <span>소프트웨어</span></a>
-                        <ul class="depth02">
-                            <div class="depth02_wrap">
+                        <ul class="mobile_depth02">
+                            <div class="mobile_depth02_wrap">
                                 <li><a href="#"><img src="img/free-icon-nintendo-switch-2420214.png"
                                             alt="닌텐도스위치 소프트웨어" /><span>NintendoSwitch<br>소프트웨어</span></a></li>
                                 <li><a href="#"><img src="img/스마트폰.png" alt="스위치 로고" /><span>스마트폰용 앱</span></a></li>
@@ -406,12 +436,12 @@
                         </ul><!-- .depth02 end -->
                     </li><!-- .depth01 end -->
 
-                    <li class="depth01">
+                    <li class="mobile_depth01">
                         <a href="#"><img src="img/iconmonstr-newspaper-13-240(white).png" alt="뉴스">
                             <img class="hover_img" src="img/iconmonstr-newspaper-13-240_hover.png" alt="">
                             <span>News</span></a>
-                        <ul class="depth02">
-                            <div class="depth02_wrap">
+                        <ul class="mobile_depth02">
+                            <div class="mobile_depth02_wrap">
                                 <li><a href="#">
                                         <div class="thumb">
                                             <img src="img/마리오데이(news).jpg" alt="마리오데이" />
@@ -451,22 +481,22 @@
                                             특전 안내</p>
                                         <p class="status"><span>news</span> / <span>2024.2.16</span></p>
                                     </a></li>
-                                <div class="depth02_bottom">
-                                    <a href="#">
-                                        <img src="img/icons8-원-셰브론-오른쪽-48.png" alt="아이콘" />
-                                        News 목록
-                                    </a>
-                                </div><!-- .depth02_bottom end -->
                             </div>
+                            <div class="mobile_depth02_bottom">
+                                <a href="#">
+                                    <img src="img/icons8-원-셰브론-오른쪽-48.png" alt="아이콘" />
+                                    News 목록
+                                </a>
+                            </div><!-- .depth02_bottom end -->
                         </ul><!-- .depth02 end -->
                     </li><!-- .depth01 end -->
 
-                    <li class="depth01">
+                    <li class="mobile_depth01">
                         <a href="#"><img src="img/캐릭터(white).png" alt="캐릭터">
                             <img class="hover_img" src="img/캐릭터_hover.png" alt="">
                             <span>캐릭터</span></a>
-                        <ul class="depth02">
-                            <div class="depth02_wrap">
+                        <ul class="mobile_depth02">
+                            <div class="mobile_depth02_wrap">
                                 <li><a href="#">
                                         <div class="character">
                                             <img src="img/마리오.png" alt="마리오" />
@@ -501,12 +531,12 @@
                         </ul><!-- .depth02 end -->
                     </li><!-- .depth01 end -->
 
-                    <li class="depth01">
+                    <li class="mobile_depth01">
                         <a href="#"><img src="img/icons8-스패너-24(white).png" alt="고객지원">
                             <img class="hover_img" src="img/icons8-스패너-24_hover.png" alt="">
                             <span>고객지원</span></a>
-                        <ul class="depth02">
-                            <div class="depth02_wrap">
+                        <ul class="mobile_depth02">
+                            <div class="mobile_depth02_wrap">
                                 <li><a href="#">
                                         <div class="support">
                                             <img src="img/스위치(고객지원).gif" alt="닌텐도 스위치 고객지원">
@@ -547,13 +577,13 @@
                         </ul><!-- .depth02 end -->
                     </li><!-- .depth01 end -->
 
-                    <li class="depth01">
+                    <li class="mobile_depth01">
                         <a href="#"><img src="img/free-icon-remove-cart-7756009.png"
                                 alt="본체 및 아미보 로고">
                                 <img class="hover_img" src="img/free-icon-remove-cart-7756009_hover.png" alt="">
                                 <span>온라인스토어</span></a>
-                    </li><!-- .depth01 end -->
-                </ul><!-- .gnb end -->
+                    </li><!-- .mobile_depth01 end -->
+                </ul><!-- .mobile_gnb end -->
             </nav><!-- .gnb_mobile -->
         </header><!-- .header end -->
 
@@ -682,6 +712,12 @@
                             <img class="second_hover" src="img/기억의문오버.png" alt="기억의 문 호버">
                         </a>
                     </div><!-- .second_btn end -->
+                    <div class="third_btn">
+                        <a href="#">
+                            <img class="third_img" src="img/탐색과수수께끼풀이_버튼.webp" alt="탐색과 수수께끼 버튼" />
+                            <img class="third_hover" src="img/탐색과수수께기풀이_호버버튼.webp" alt="탐색과 수수께끼 버튼">
+                        </a>
+                    </div><!-- .third_btn end -->
                 </div><!-- .main_btn -->
                 <div class="trial_btn">
                     <a href="#">

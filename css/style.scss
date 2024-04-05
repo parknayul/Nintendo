@@ -56,7 +56,7 @@ body {
             background-color: rgb(255, 255, 255);
         }
     }
-    .gnb_pc .gnb {
+    .gnb_pc .pc_gnb {
         max-width: 1440px;
         margin: 0 auto;
         height: 100%;
@@ -492,6 +492,9 @@ body {
         .second_hover {
             display: none;
         }
+        .third_hover {
+            display: none;
+        }
     }
     .first_btn:hover .first_img  {
         display: none;
@@ -507,6 +510,13 @@ body {
     .second_btn:hover .second_hover {
         display: inline-block;
     }
+    .third_btn:hover .third_img {
+        display: none;
+    }
+    .third_btn:hover .third_hover {
+        display: inline-block;
+    }
+
 
 
     .main_btn a:first-child img {
@@ -1302,6 +1312,9 @@ body {
 }/* 1240px */
 
 @media screen and (max-width:1024px) {
+    body.on {
+        overflow: hidden;
+    }
     .gnb_pc {
         display: none;
     }
@@ -1329,49 +1342,132 @@ body {
 
     .gnb_mobile {
         display: block;
-        width: 100%;
+        width: 50%;
         height: 100%;
         position: fixed;
-        top:70px;
-        left: 0;
+        top:69px;
+        left: -100%;
         background-color: #000;
+        overflow: scroll;
         z-index: 99;
-        display: none;
     }
 
-    .gnb_mobile .depth01 {
-        padding: 50px;
+    .mobile_gnb .mobile_depth01 {
         border-bottom: 1px solid #fff;
-        font-size: 3rem;
-        display: none;
+        font-size: 2rem;
     }
 
-    .gnb_mobile .depth01:last-child {
+    .mobile_gnb .mobile_depth01 a {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+    .mobile_gnb .mobile_depth01 span {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        width: 100%;
+        height: 100px;
+    }
+
+    .mobile_gnb .mobile_depth01:last-child {
         border-bottom: 0;
     }
 
-    .gnb_mobile .depth01::after {
-        content: url(../img/icons8-원-셰브론-아래로-48.png);
-        right: 20px;
-    }
-
-    .header .depth01 > a img {
+    .header .mobile_depth01 > a img {
         height: 50px;
-        margin-right:20px
+        padding: 0 20px;
     }
 
-    .header .depth02 .depth02_wrap {
-        justify-content: flex-start;
-    }
-
-    .gnb_mobile .depth02_wrap {
+    .header .mobile_depth02 {
+        background-color: #fff;
+        z-index: 9;
         display: none;
-        justify-content: flex-start;
     }
 
-    .gnb_mobile .depth02 li >a {
+    .header .mobile_depth02 .mobile_depth02_wrap {
         display: flex;
         align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mobile_gnb .mobile_depth02 li {
+        color: #fff;
+        padding: 20px 0;
+    }
+
+    .mobile_gnb .mobile_depth02 li >a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #333;
+    }
+
+    .header .mobile_depth02 li > a img {
+        height: 50px;
+    }
+
+    .header .mobile_depth02 li span {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #333;
+    }
+
+    .header .mobile_depth02 .mobile_depth02_wrap .character img {
+        height: 80px;
+    }
+
+    .header .mobile_depth02 .mobile_depth02_wrap .character .text {
+        text-align: center;
+        padding: 10px 0 0;
+    }
+    
+
+    .header .mobile_depth02 .title {
+        display: -webkit-box; /* 박스 방향 설정/ 말줄임표 쓸때만 사용 */
+        -webkit-box-orient: vertical;/* 박스 방향 설정 : 수직 */
+        -webkit-line-clamp: 1;/* 박스안에 보여주고자 하는 라인 수 : 숫자 */
+        overflow: hidden;/* 나머지 텍스트 숨김처리 */
+        padding: 0 50px;
+    }
+
+    .mobile_depth02_bottom a {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        font-size: 1.4rem;
+    }
+
+    .mobile_depth02_bottom img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header .mobile_depth02 .thumb img {
+        height: 100px;
+    }
+
+    .header .mobile_depth02 .status {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .header .mobile_depth02 .status span {
+        height: 0;
+    }
+
+    .header .mobile_depth02 .text {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    .header .title::after {
+        display: none;
     }
 
     .button {
@@ -2075,6 +2171,9 @@ body {
 }
 
 @media screen and (max-width:550px) {
+    .gnb_mobile {
+        width: 80%;
+    }
     .main_visual .swiper-horizontal > .swiper-pagination-bullets, .main_visual .swiper-pagination-bullets.swiper-pagination-horizontal, .main_visual .swiper-pagination-custom, .main_visual .swiper-pagination-fraction {
         bottom: -10.5rem;
     }
@@ -2182,6 +2281,9 @@ body {
 
 /* 480px 시작 */
 @media screen and (max-width:420px) {
+    .gnb_mobile {
+        width: 100%;
+    }
     .cont01 .outer {
         height: 1150px;
     }
