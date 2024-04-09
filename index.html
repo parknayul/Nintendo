@@ -20,56 +20,61 @@
     <!-- Initialize Swiper -->
     <script>
         $(function () {
-             //헤더 스크롤 방향 감지 이벤트
-             let lastScroll = 0;
-            let scrollTimeout;
-
-            $(window).scroll(function () {
-                let nowScroll = $(this).scrollTop();
-
-
-                if (nowScroll > lastScroll) {
-                    $('header').stop().slideUp(50);
-                } else {
-                    $('header').stop().slideDown(200);
+            //헤더 스크롤 방향 감지 이벤트
+            var header = document.querySelector('header');
+            var headerMoving = function (direction) {
+                if (direction === "up") {
+                    header.className = '';
+                } else if (direction === "down") {
+                    header.className = 'scrollDown';
                 }
-
+            };
+            var prevScrollTop = 0;
+            document.addEventListener("scroll", function () {
+                var nextScrollTop = window.pageYOffset || 0; // pageYOffset -> IE 8 이하 빼고 다 됨.
+                if (nextScrollTop > prevScrollTop) {
+                    headerMoving("down");
+                } else if (nextScrollTop < prevScrollTop) {
+                    headerMoving("up");
+                }
+                prevScrollTop = nextScrollTop;
             });
 
-             //1차메뉴 호버시 2차메뉴 드롭다운
-             let depth01 = $('.header .depth01');
+
+            //1차메뉴 호버시 2차메뉴 드롭다운
+            let depth01 = $('.header .depth01');
             let depth02 = $('.header .depth02');
 
             depth01.mouseenter(function () {
-                $(this).find('.depth02').stop().slideDown();
+                $(this).find('.depth02').stop().slideDown(0);
             });//depth01.mouseenter
 
             depth01.mouseleave(function () {
-                depth02.stop().slideUp();
+                depth02.stop().slideUp(200);
             });//depth01.mouseenter
 
             //모바일 버튼 클릭시 메뉴 나타나기
-            $(document).ready(function(){
-            $('.mobile-btn').click(function(){
-                if ($('.gnb_mobile').css('left') === '0px') {
-                    $('.gnb_mobile').animate({
-                        left : '-100%'
-                    }, 300, 'easeInOutCirc');
-                    $('body').removeClass('on');
-                } else {
-                    $('.gnb_mobile').animate({
-                        left : '0'
-                    }, 300, 'easeInOutCirc');
-                    $('body').addClass('on');
-                }
-            });
-        });//mobile button click end
+            $(document).ready(function () {
+                $('.mobile-btn').click(function () {
+                    if ($('.gnb_mobile').css('left') === '0px') {
+                        $('.gnb_mobile').animate({
+                            left: '-100%'
+                        }, 300, 'easeInOutCirc');
+                        $('body').removeClass('on');
+                    } else {
+                        $('.gnb_mobile').animate({
+                            left: '0'
+                        }, 300, 'easeInOutCirc');
+                        $('body').addClass('on');
+                    }
+                });
+            });//mobile button click end
 
             //모바일 아코디언메뉴
-            $('.header .mobile_depth01>a').click(function(){
-                if($(this).next().css('display') === 'none') {
+            $('header .mobile_depth01>a').click(function () {
+                if ($(this).next().css('display') === 'none') {
                     //alert()
-                    $('.header .mobile_depth02').slideUp();
+                    $('header .mobile_depth02').slideUp();
 
                     $(this).next().slideDown();
                 } else {
@@ -79,7 +84,7 @@
             });//아코디언메뉴 end
 
             //모바일 푸터 아코디언 메뉴
-            $('.footer .inner .bottom_nav .nav > li > a').click(function(){
+            $('.footer .inner .bottom_nav .nav > li > a').click(function () {
                 //slicdeToggle()
                 event.preventDefault();
                 $(this).next().slideToggle();
@@ -132,9 +137,9 @@
                     bigItemP.innerHTML = smallItemP[i].innerHTML
 
                     smallItemImage.forEach((imageStyle) => {
-                    imageStyle.style.opacity = '0.3';
+                        imageStyle.style.opacity = '0.3';
                     });//forEach
-                    
+
                     smallItemImage[i].style.opacity = '1';
                     bigItemIcon.src = smallItemIcon[i].src
                     bigItemLang.src = smallItemLang[i].src
@@ -241,8 +246,9 @@
                     <li class="depth01">
                         <a href="#"><img src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon(white).png"
                                 alt="본체 및 아미보 로고">
-                                <img class="hover_img" src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon_hover.png" alt="">
-                                <span>본체 및 amibo</span></a>
+                            <img class="hover_img"
+                                src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon_hover.png" alt="">
+                            <span>본체 및 amibo</span></a>
                         <ul class="depth02">
                             <div class="depth02_wrap">
                                 <li><a href="#"><img src="img/Nintendo_Switch_Logo.svg.png"
@@ -253,10 +259,9 @@
                     </li><!-- .depth01 end -->
 
                     <li class="depth01">
-                        <a href="#"><img src="img/free-icon-direction-12940375(white).png"
-                                alt="본체 및 아미보 로고">
-                                <img class="hover_img" src="img/free-icon-direction-12940375_hover.png" alt="">
-                                <span>소프트웨어</span></a>
+                        <a href="#"><img src="img/free-icon-direction-12940375(white).png" alt="본체 및 아미보 로고">
+                            <img class="hover_img" src="img/free-icon-direction-12940375_hover.png" alt="">
+                            <span>소프트웨어</span></a>
                         <ul class="depth02">
                             <div class="depth02_wrap">
                                 <li><a href="#"><img src="img/free-icon-nintendo-switch-2420214.png"
@@ -408,21 +413,21 @@
                     </li><!-- .depth01 end -->
 
                     <li class="depth01">
-                        <a href="#"><img src="img/free-icon-remove-cart-7756009.png"
-                                alt="본체 및 아미보 로고">
-                                <img class="hover_img" src="img/free-icon-remove-cart-7756009_hover.png" alt="">
-                                <span>온라인스토어</span></a>
+                        <a href="#"><img src="img/free-icon-remove-cart-7756009.png" alt="본체 및 아미보 로고">
+                            <img class="hover_img" src="img/free-icon-remove-cart-7756009_hover.png" alt="">
+                            <span>온라인스토어</span></a>
                     </li><!-- .depth01 end -->
                 </ul><!-- .gnb end -->
             </nav><!-- .gnb_pc -->
-            
+
             <nav class="gnb_mobile mobile">
                 <ul class="mobile_gnb">
                     <li class="mobile_depth01">
                         <a href="#"><img src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon(white).png"
                                 alt="본체 및 아미보 로고">
-                                <img class="hover_img" src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon_hover.png" alt="">
-                                <span>본체 및 amibo</span></a>
+                            <img class="hover_img"
+                                src="img/png-transparent-logo-nintendo-switch-logos-and-brands-icon_hover.png" alt="">
+                            <span>본체 및 amibo</span></a>
                         <ul class="mobile_depth02">
                             <div class="mobile_depth02_wrap">
                                 <li><a href="#"><img src="img/Nintendo_Switch_Logo.svg.png"
@@ -433,10 +438,9 @@
                     </li><!-- .depth01 end -->
 
                     <li class="mobile_depth01">
-                        <a href="#"><img src="img/free-icon-direction-12940375(white).png"
-                                alt="본체 및 아미보 로고">
-                                <img class="hover_img" src="img/free-icon-direction-12940375_hover.png" alt="">
-                                <span>소프트웨어</span></a>
+                        <a href="#"><img src="img/free-icon-direction-12940375(white).png" alt="본체 및 아미보 로고">
+                            <img class="hover_img" src="img/free-icon-direction-12940375_hover.png" alt="">
+                            <span>소프트웨어</span></a>
                         <ul class="mobile_depth02">
                             <div class="mobile_depth02_wrap">
                                 <li><a href="#"><img src="img/free-icon-nintendo-switch-2420214.png"
@@ -588,10 +592,9 @@
                     </li><!-- .depth01 end -->
 
                     <li class="mobile_depth01">
-                        <a href="#"><img src="img/free-icon-remove-cart-7756009.png"
-                                alt="본체 및 아미보 로고">
-                                <img class="hover_img" src="img/free-icon-remove-cart-7756009_hover.png" alt="">
-                                <span>온라인스토어</span></a>
+                        <a href="#"><img src="img/free-icon-remove-cart-7756009.png" alt="본체 및 아미보 로고">
+                            <img class="hover_img" src="img/free-icon-remove-cart-7756009_hover.png" alt="">
+                            <span>온라인스토어</span></a>
                     </li><!-- .mobile_depth01 end -->
                 </ul><!-- .mobile_gnb end -->
             </nav><!-- .gnb_mobile -->
@@ -605,7 +608,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img class="pc_visual" src="img/Magento_1920_700.png" alt="어나더코드"/>
+                                    <img class="pc_visual" src="img/Magento_1920_700.png" alt="어나더코드" />
                                     <img class="mobile_visual" src="img/어나더코드_모바일.png" alt="">
                                 </figure>
                             </a>
@@ -614,7 +617,7 @@
                             <a href="#">
                                 <figure>
                                     <img class="pc_visual" src="img/spla.png" alt="스플래툰3" />
-                                    <img class="mobile_visual" src="img/스플래툰3_모바일.png" alt="스플래툰3"/>
+                                    <img class="mobile_visual" src="img/스플래툰3_모바일.png" alt="스플래툰3" />
                                 </figure>
                             </a>
                         </div><!-- .swiper-slide end -->
@@ -1061,7 +1064,7 @@
                             </div><!-- .title_txt end  -->
                         </a>
                     </div><!-- .item end -->
-                    
+
                     <div class="more_view">
                         <a href="#">
                             <div class="more_view_btn">
@@ -1194,46 +1197,46 @@
         </section><!-- .popular_item -->
 
         <section class="news">
-             <div class="inner">
-                    <div class="title_sect">
-                        <h4>News&update</h4>
-                        <h1>닌텐도의 새로운 소식을 만나보세요!</h1>
-                        <a href="#">
-                            <p>view more</p>
-                        </a>
-                    </div><!-- .title_sect -->
-                    <div class="news_list">
-                        <div class="news_wrap">
-                            <div class="img_sect">
-                                <a href="#">
-                                    <figure>
-                                        <img src="img/포켓몬레전드ZA.png" alt="포켓몬레전드ZA"/>
-                                    </figure>
-                                </a>
-                            </div><!-- .img_sect end -->
-                            <div class="text_sect">
-                                <a href="#">
-                                    <p>「포켓몬스터」 시리즈의 새로운 도전작<br>
-                                        「Pokémon LEGENDS Z-A(포켓몬 레전즈 제트에이)」가 2025년 전 세계 동시 발매!</p>
-                                </a>
-                            </div><!-- .text_sect end -->
-                        </div><!-- .news_wrap end -->
-                        <div class="news_wrap">
-                            <div class="img_sect">
-                                <a href="#">
-                                    <figure>
-                                        <img src="img/스플래툰3(news).jpg" alt="스플래툰3"/>
-                                    </figure>
-                                </a>
-                            </div><!-- .img_sect end -->
-                            <div class="text_sect">
-                                <a href="#">
-                                    <p>『스플래툰 3』 뉴 시즌 「2024 봄 Fresh Season」은 3월 1일부터 개막합니다.</p>
-                                </a>
-                            </div><!-- .text_sect end -->
-                        </div><!-- .news_wrap end -->
-                    </div><!-- .news_list -->
-             </div><!-- .inner end -->
+            <div class="inner">
+                <div class="title_sect">
+                    <h4>News&update</h4>
+                    <h1>닌텐도의 새로운 소식을 만나보세요!</h1>
+                    <a href="#">
+                        <p>view more</p>
+                    </a>
+                </div><!-- .title_sect -->
+                <div class="news_list">
+                    <div class="news_wrap">
+                        <div class="img_sect">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/포켓몬레전드ZA.png" alt="포켓몬레전드ZA" />
+                                </figure>
+                            </a>
+                        </div><!-- .img_sect end -->
+                        <div class="text_sect">
+                            <a href="#">
+                                <p>「포켓몬스터」 시리즈의 새로운 도전작<br>
+                                    「Pokémon LEGENDS Z-A(포켓몬 레전즈 제트에이)」가 2025년 전 세계 동시 발매!</p>
+                            </a>
+                        </div><!-- .text_sect end -->
+                    </div><!-- .news_wrap end -->
+                    <div class="news_wrap">
+                        <div class="img_sect">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/스플래툰3(news).jpg" alt="스플래툰3" />
+                                </figure>
+                            </a>
+                        </div><!-- .img_sect end -->
+                        <div class="text_sect">
+                            <a href="#">
+                                <p>『스플래툰 3』 뉴 시즌 「2024 봄 Fresh Season」은 3월 1일부터 개막합니다.</p>
+                            </a>
+                        </div><!-- .text_sect end -->
+                    </div><!-- .news_wrap end -->
+                </div><!-- .news_list -->
+            </div><!-- .inner end -->
         </section><!-- .news -->
 
         <section class="notice">
@@ -1268,55 +1271,55 @@
                 <div class="bottom_nav">
                     <ul class="nav">
                         <li><a href="#">한국닌텐도</a>
-                        <ul class="sub_nav">
-                            <li><a href="#">- 회사개요</a></li>
-                            <li><a href="#">- 찾아오시는길</a></li>
-                        </ul><!-- .sub_nav end -->
+                            <ul class="sub_nav">
+                                <li><a href="#">- 회사개요</a></li>
+                                <li><a href="#">- 찾아오시는길</a></li>
+                            </ul><!-- .sub_nav end -->
                         </li>
                         <li><a href="#">본체/amibo</a>
-                        <ul class="sub_nav">
-                            <li><a href="#">- Nintendo Switch</a></li>
-                            <li><a href="#">- amibo</a></li>
-                        </ul><!-- .sub_nav end -->
+                            <ul class="sub_nav">
+                                <li><a href="#">- Nintendo Switch</a></li>
+                                <li><a href="#">- amibo</a></li>
+                            </ul><!-- .sub_nav end -->
                         </li>
                         <li><a href="#">소프트웨어</a>
-                        <ul class="sub_nav">
-                            <li><a href="#">- Nintendo Switch 소프트웨어</a></li>
-                            <li><a href="#">- 소프트웨어발매 스케쥴</a></li>
-                            <li><a href="#">- 스마트폰용 앱</a></li>
-                        </ul><!-- .sub_nav end -->
+                            <ul class="sub_nav">
+                                <li><a href="#">- Nintendo Switch 소프트웨어</a></li>
+                                <li><a href="#">- 소프트웨어발매 스케쥴</a></li>
+                                <li><a href="#">- 스마트폰용 앱</a></li>
+                            </ul><!-- .sub_nav end -->
                         </li>
                         <li><a href="#">고객지원</a>
-                        <ul class="sub_nav">
-                            <li><a href="#">- 고객지원 홈페이지</a></li>
-                        </ul><!-- .sub_nav end -->
+                            <ul class="sub_nav">
+                                <li><a href="#">- 고객지원 홈페이지</a></li>
+                            </ul><!-- .sub_nav end -->
                         </li>
                     </ul><!-- .nav end -->
                 </div><!-- .bottom_nav end -->
                 <div class="link_btn">
                     <div class="my_nintendo">
-                        <a href="#"><img src="img/my_nintendo_btn.png" alt="my nintendo"/></a>
+                        <a href="#"><img src="img/my_nintendo_btn.png" alt="my nintendo" /></a>
                     </div><!-- .my_nintendo end -->
                     <div class="amibo">
-                        <a href="#"><img src="img/amibo_btn.png" alt="aimibo"/></a>
+                        <a href="#"><img src="img/amibo_btn.png" alt="aimibo" /></a>
                     </div><!-- .my_nintendo end -->
                 </div><!-- .link_btn end -->
 
                 <div class="sns_btn">
                     <div class="youtube">
-                        <a href="#"><img src="img/youtube_btn.png" alt="유튜브"/></a>
+                        <a href="#"><img src="img/youtube_btn.png" alt="유튜브" /></a>
                     </div><!-- .youtube -->
                     <div class="kakaostory">
-                        <a href="#"><img src="img/kakaostory_btn.png" alt="카카오스토리"/></a>
+                        <a href="#"><img src="img/kakaostory_btn.png" alt="카카오스토리" /></a>
                     </div><!-- .youtube -->
                     <div class="facebook">
-                        <a href="#"><img src="img/facebook_btn.png" alt="페이스북"/></a>
+                        <a href="#"><img src="img/facebook_btn.png" alt="페이스북" /></a>
                     </div><!-- .youtube -->
                     <div class="twiter">
-                        <a href="#"><img src="img/twiter_btn.png" alt="트위터"/></a>
+                        <a href="#"><img src="img/twiter_btn.png" alt="트위터" /></a>
                     </div><!-- .youtube -->
                     <div class="kakaotalk">
-                        <a href="#"><img src="img/kakaotalk_btn.png" alt="카카오톡"/></a>
+                        <a href="#"><img src="img/kakaotalk_btn.png" alt="카카오톡" /></a>
                     </div><!-- .youtube -->
                 </div><!-- .sns_btn end -->
 
