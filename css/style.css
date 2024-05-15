@@ -193,7 +193,6 @@ header .depth02 .depth02_bottom {
 header .depth02 .depth02_bottom a {
   display: block;
   font-size: 1.5rem;
-  vertical-align: middle;
   color: #333;
 }
 header .depth02 .depth02_bottom img {
@@ -223,7 +222,7 @@ header .depth02 .depth02_bottom img {
   margin: 0 10px;
 }
 .main_visual .swiper-horizontal > .swiper-pagination-bullets, .main_visual .swiper-pagination-bullets.swiper-pagination-horizontal, .main_visual .swiper-pagination-custom, .main_visual .swiper-pagination-fraction {
-  bottom: -103px;
+  bottom: -163px;
 }
 .main_visual .swiper-pagination-bullet {
   width: calc(20% - 20px);
@@ -856,7 +855,6 @@ header .depth02 .depth02_bottom img {
   display: block;
   font-size: 2.5rem;
   color: #fff;
-  vertical-align: middle;
 }
 .sale_plan .inner .more_view .more_view_txt span::after {
   content: url(../img/right_btn.png);
@@ -980,7 +978,6 @@ header .depth02 .depth02_bottom img {
 }
 .news .inner .title_sect p::after {
   content: url(../img/icons8-원-오른쪽-48.png);
-  vertical-align: middle;
   padding: 1rem;
   display: block;
   transition: transform 0.3s ease-in-out;
@@ -1274,7 +1271,7 @@ header .depth02 .depth02_bottom img {
     gap: 1rem;
   }
 } /* 1240px */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1120px) {
   .gnb_pc {
     display: none;
   }
@@ -1297,8 +1294,8 @@ header .depth02 .depth02_bottom img {
   .mobile-btn {
     display: block;
     position: fixed;
-    top: 5%;
-    left: 2rem;
+    top: 4%;
+    left: 1rem;
     transform: translateY(-50%);
   }
   .mobile-btn img {
@@ -1421,6 +1418,7 @@ header .depth02 .depth02_bottom img {
   }
   .button button {
     color: #fff;
+    font-size: 11px;
   }
   .button button::before {
     content: url(../img/right_btn.png);
@@ -1534,7 +1532,7 @@ header .depth02 .depth02_bottom img {
     width: 250px;
   }
   .sale_plan .inner .more_view .more_view_txt span {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
   }
   .sale_plan .inner .list .item:hover img {
     display: none;
@@ -1551,7 +1549,7 @@ header .depth02 .depth02_bottom img {
     font-size: 1.8rem;
   }
   .sale_plan .inner .list .item .title_txt .sub_txt_wrap {
-    margin-top: 1.5rem;
+    padding-top: 1rem;
     font-size: 1.6rem;
   }
   .sale_plan .inner .list .item::before {
@@ -1619,7 +1617,7 @@ header .depth02 .depth02_bottom img {
     justify-content: flex-start;
     margin-bottom: 1.5rem;
   }
-} /* 1024px */
+} /* 1120px */
 @media screen and (max-width: 960px) {
   .cont01 {
     margin-top: 16rem;
@@ -1656,6 +1654,7 @@ header .depth02 .depth02_bottom img {
     height: 11.04vw;
   }
   .new_software .title_img h2 {
+    font-size: 5rem;
     top: 18%;
     left: 35%;
   }
@@ -1690,6 +1689,8 @@ header .depth02 .depth02_bottom img {
   .new_software .inner .small_item .item .sub_wrap {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 0;
+    height: 100px;
   }
   .new_software .inner a span {
     margin-right: 1.8rem;
@@ -1711,7 +1712,7 @@ header .depth02 .depth02_bottom img {
     height: 27.13vw;
   }
   .sale_plan .title_wrap h2 {
-    font-size: 6rem;
+    font-size: 5rem;
     top: 18%;
     right: 12%;
   }
@@ -1729,7 +1730,7 @@ header .depth02 .depth02_bottom img {
     height: 11.04vw;
   }
   .popular_item .title_wrap h2 {
-    font-size: 6rem;
+    font-size: 5rem;
     top: 5%;
     left: 23%;
   }
@@ -1851,6 +1852,11 @@ header .depth02 .depth02_bottom img {
   .main_visual .swiper-horizontal > .swiper-pagination-bullets, .main_visual .swiper-pagination-bullets.swiper-pagination-horizontal, .main_visual .swiper-pagination-custom, .main_visual .swiper-pagination-fraction {
     bottom: -13.5rem;
   }
+  .new_software .title_img h2 {
+    top: 15%;
+    left: 41%;
+    font-size: 5rem;
+  }
   .new_software .title_img {
     width: 85.72%;
   }
@@ -1870,9 +1876,9 @@ header .depth02 .depth02_bottom img {
     margin: 0 auto;
   }
   .mobilever_btn button {
-    font-size: 1.5rem;
-    width: 150px;
-    height: 40px;
+    font-size: 1.5em;
+    width: 140px;
+    height: 35px;
     border-radius: 15px;
     color: #fff;
     background-color: #e60012;
@@ -1883,14 +1889,17 @@ header .depth02 .depth02_bottom img {
     display: block;
     content: "";
     background: url(../img/icons8-원-셰브론-오른쪽-64.png);
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     top: 50%;
-    right: 27px;
+    right: 34px;
     transform: translateY(-50%);
+  }
+  .cont01 .outer {
+    height: 1380px;
   }
   .cont01 .outer .switch_oled {
     width: 46.3%;
@@ -1909,6 +1918,17 @@ header .depth02 .depth02_bottom img {
   }
   .cont01 .outer .switch_lite figure {
     height: 21.5vw;
+  }
+  .sale_plan .title_wrap h2 {
+    font-size: 5rem;
+    right: 23%;
+  }
+  .sale_plan .inner .list .item .title_txt h4 {
+    font-size: 1.6rem;
+    height: 30px;
+  }
+  .sale_plan .inner .list .item .title_txt .sub_txt_wrap {
+    font-size: 14px;
   }
   .sale_plan .title_wrap .title_img {
     width: 85.72%;
@@ -1942,6 +1962,8 @@ header .depth02 .depth02_bottom img {
   }
   .footer .inner .bottom_nav .nav > li .sub_nav {
     display: none;
+    text-align: left;
+    margin-top: 1rem;
   }
   .footer .inner .bottom_nav .nav > li {
     padding: 20px 0;
@@ -1955,14 +1977,18 @@ header .depth02 .depth02_bottom img {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background-repeat: no-repeat;
     background-size: cover;
   }
   .footer .inner .bottom_nav .nav > li > a {
     margin-bottom: 0;
     text-align: left;
+    font-size: 1.6rem;
+  }
+  .footer .inner .bottom_nav .nav > li .sub_nav > li {
+    font-size: 1.2rem;
   }
   .footer .inner .link_btn {
     flex-direction: column;
@@ -2072,7 +2098,7 @@ header .depth02 .depth02_bottom img {
     font-size: 1.2rem;
   }
 } /* 550px */
-/* 480px 시작 */
+/* 420px 시작 */
 @media screen and (max-width: 420px) {
   header .gnb_mobile {
     width: 100%;
@@ -2099,14 +2125,20 @@ header .depth02 .depth02_bottom img {
     width: 300px;
   }
   .notice {
-    padding: 0;
+    padding: 0 10px;
   }
-  .notice .inner .notice_body {
-    padding: 0 0 0 0;
+  .notice .inner .notice_body .notice_txt {
+    font-size: 1rem;
+  }
+  .notice .inner .notice_body .notice_txt a::before {
+    background-size: 15px 15px;
   }
   .footer .inner .sns_btn img {
     width: 40px;
     height: 40px;
+  }
+  .footer .footter_wrap .inner address {
+    text-align: left;
   }
   .footer .footter_wrap .inner .footer_info .terms {
     width: 100%;
@@ -2119,7 +2151,7 @@ header .depth02 .depth02_bottom img {
     height: 25px;
   }
   .footer .footter_wrap {
-    padding: 20px 0;
+    padding: 20px 10px;
   }
   .footer .footter_wrap .inner address .adress_info {
     display: flex;
