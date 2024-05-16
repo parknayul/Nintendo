@@ -1214,6 +1214,16 @@ header .depth02 .depth02_bottom img {
 
 /* .footer end */
 /* 반응형 시작 */
+@media screen and (max-width: 1404px) {
+  .sale_plan .inner .list .item {
+    width: 452px;
+  }
+}
+@media screen and (max-width: 1382px) {
+  .sale_plan .inner .list .item {
+    width: 380px;
+  }
+}
 @media screen and (max-width: 1240px) {
   .header .depth01 {
     font-size: 1.6rem;
@@ -1226,7 +1236,7 @@ header .depth02 .depth02_bottom img {
     right: 27%;
   }
   .new_software .title_img h2 {
-    font-size: 8rem;
+    font-size: 7rem;
     top: 7%;
     left: 34%;
   }
@@ -1234,7 +1244,7 @@ header .depth02 .depth02_bottom img {
     height: 67%;
   }
   .sale_plan .title_wrap h2 {
-    font-size: 8rem;
+    font-size: 7rem;
     top: 7%;
     right: 11%;
   }
@@ -1245,7 +1255,7 @@ header .depth02 .depth02_bottom img {
     width: 95%;
   }
   .popular_item .title_wrap h2 {
-    font-size: 8rem;
+    font-size: 7rem;
     top: 2%;
   }
   .popular_item .inner .swiper-slide figure {
@@ -1316,7 +1326,7 @@ header .depth02 .depth02_bottom img {
   }
   header .mobile_gnb .mobile_depth01 {
     border-bottom: 1px solid #fff;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #fff;
   }
   header .mobile_gnb .mobile_depth01 > a {
@@ -1333,7 +1343,7 @@ header .depth02 .depth02_bottom img {
     border-bottom: 0;
   }
   header .mobile_depth01 > a img {
-    height: 50px;
+    height: 25px;
     padding: 0 20px;
   }
   header .mobile_depth02 {
@@ -1526,7 +1536,7 @@ header .depth02 .depth02_bottom img {
     right: 8%;
   }
   .sale_plan .inner .list .item {
-    width: 321.3333333333px;
+    width: 309px;
   }
   .sale_plan .inner .more_view img {
     width: 250px;
