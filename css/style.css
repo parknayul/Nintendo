@@ -1219,9 +1219,28 @@ header .depth02 .depth02_bottom img {
     width: 452px;
   }
 }
-@media screen and (max-width: 1382px) {
+@media screen and (max-width: 1340px) {
+  .new_software .title_img h2 {
+    top: 5%;
+    left: 38%;
+    font-size: 7rem;
+  }
+  .sale_plan .title_wrap h2 {
+    top: 8%;
+    left: 37%;
+    font-size: 7rem;
+  }
   .sale_plan .inner .list .item {
     width: 380px;
+  }
+  .popular_item .title_wrap h2 {
+    top: 2%;
+  }
+  .popular_item .inner .swiper-button-next {
+    right: 2%;
+  }
+  .popular_item .inner .swiper-button-prev {
+    left: 2%;
   }
 }
 @media screen and (max-width: 1240px) {
@@ -1423,7 +1442,7 @@ header .depth02 .depth02_bottom img {
     width: 120px;
     height: 30px;
     text-align: center;
-    line-height: 30px;
+    line-height: 35px;
     margin: 2rem auto;
   }
   .button button {
@@ -1617,7 +1636,7 @@ header .depth02 .depth02_bottom img {
     margin-top: 10rem;
   }
   .footer .footter_wrap {
-    padding: 30px 110px;
+    padding: 30px 20px;
   }
   .footer .footter_wrap .inner .footer_info {
     flex-direction: column;
@@ -1794,7 +1813,7 @@ header .depth02 .depth02_bottom img {
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: none;
-    border: 1px solid #333;
+    border: 1px solid #929292;
   }
   .main_visual .swiper-pagination-bullet:first-child::before {
     border-radius: 50%;
@@ -1808,7 +1827,7 @@ header .depth02 .depth02_bottom img {
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: none;
-    border: 1px solid #333;
+    border: 1px solid #929292;
   }
   .main_visual .swiper-pagination-bullet:nth-child(2)::before {
     border-radius: 50%;
@@ -1822,7 +1841,7 @@ header .depth02 .depth02_bottom img {
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: none;
-    border: 1px solid #333;
+    border: 1px solid #929292;
   }
   .main_visual .swiper-pagination-bullet:nth-child(3)::before {
     border-radius: 50%;
@@ -1836,7 +1855,7 @@ header .depth02 .depth02_bottom img {
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: none;
-    border: 1px solid #333;
+    border: 1px solid #929292;
   }
   .main_visual .swiper-pagination-bullet:nth-child(4)::before {
     border-radius: 50%;
@@ -1850,7 +1869,7 @@ header .depth02 .depth02_bottom img {
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: none;
-    border: 1px solid #333;
+    border: 1px solid #929292;
   }
   .main_visual .swiper-pagination-bullet:nth-child(5)::before {
     border-radius: 50%;
@@ -1931,7 +1950,7 @@ header .depth02 .depth02_bottom img {
   }
   .sale_plan .title_wrap h2 {
     font-size: 5rem;
-    right: 23%;
+    left: 20%;
   }
   .sale_plan .inner .list .item .title_txt h4 {
     font-size: 1.6rem;
@@ -1948,6 +1967,12 @@ header .depth02 .depth02_bottom img {
   }
   .popular_item .inner .swiper-slide figure {
     height: 18.09vw;
+  }
+  .popular_item .inner .swiper-button-next, .popular_item .inner .swiper-button-prev {
+    width: 45px;
+  }
+  .popular_item .inner .swiper-button-next, .popular_item .inner .swiper-button-prev {
+    width: 45px;
   }
   .news .inner .news_list .text_sect p {
     font-size: 1.5rem;
@@ -2017,13 +2042,13 @@ header .depth02 .depth02_bottom img {
     bottom: -10.5rem;
   }
   .cont01 {
-    margin-top: 7rem;
+    margin-top: 0rem;
   }
   .cont01 .outer {
     height: 1270px;
   }
   .button button {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .new_software .inner .small_item .item .main_text h4 {
     font-size: 1.4rem;
@@ -2051,7 +2076,7 @@ header .depth02 .depth02_bottom img {
   .sale_plan .title_wrap h2 {
     font-size: 4rem;
     top: 22%;
-    right: 22%;
+    left: 22%;
   }
   .sale_plan .inner .list .item .title_txt h4 {
     font-size: 1.4rem;
@@ -2117,19 +2142,25 @@ header .depth02 .depth02_bottom img {
     height: 1150px;
   }
   .new_software .title_img h2 {
-    top: 12%;
-    left: 22%;
+    font-size: 3rem;
+    top: 20%;
+    left: 27%;
   }
   .new_software .inner .small_item .item .main_text h4 {
     font-size: 1.2rem;
   }
+  .mobilever_btn button::after {
+    right: 30px;
+  }
   .sale_plan .title_wrap h2 {
-    top: 14%;
-    right: 12%;
+    font-size: 3rem;
+    top: 20%;
+    left: 20%;
   }
   .popular_item .title_wrap h2 {
-    top: 3%;
-    left: 22%;
+    font-size: 3rem;
+    top: 4%;
+    left: 30%;
   }
   .footer .inner .link_btn img {
     width: 300px;
@@ -2174,8 +2205,14 @@ header .depth02 .depth02_bottom img {
   }
 }
 @media screen and (max-width: 380px) {
+  .main_visual .swiper-horizontal > .swiper-pagination-bullets, .main_visual .swiper-pagination-bullets.swiper-pagination-horizontal, .main_visual .swiper-pagination-custom, .main_visual .swiper-pagination-fraction {
+    bottom: -6.5rem;
+  }
+  .cont01 {
+    margin-top: -5rem;
+  }
   .cont01 .outer {
-    height: 1050px;
+    height: 1110px;
   }
   .cont01 .outer .outer_logo img {
     width: 100px;
