@@ -1273,7 +1273,7 @@ header {
         font-size: 7rem;
     }
     .sale_plan .inner .list .item {
-        width: 380px;
+        width: 390px;
     }
 
     .popular_item .title_wrap h2 {
@@ -1741,7 +1741,7 @@ header {
     }
 
     .news {
-        margin-top: 10rem;
+        margin-top: 3rem;
     }
 
     .news .inner {
@@ -2293,7 +2293,7 @@ header {
     }
 
     .mobilever_btn button {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .sale_plan .title_wrap .title_img {
@@ -2378,6 +2378,10 @@ header {
     .cont01 .outer {
         height: 1150px;
     }
+
+    .cont01 .outer .name {
+        font-size: 1.4rem;
+    }
     .new_software .title_img h2 {
         font-size: 3rem;
         top:20%;
@@ -2390,10 +2394,18 @@ header {
     .mobilever_btn button::after {
         right: 30px;
     }
+
+    .sale_plan {
+        margin-top: 3rem;
+    }
     .sale_plan .title_wrap h2 {
         font-size: 3rem;
         top:20%;
         left: 20%;
+    }
+
+    .popular_item {
+        margin-top: 3rem;
     }
     .popular_item .title_wrap h2 {
         font-size: 3rem;
@@ -2404,6 +2416,10 @@ header {
         width: 300px;
     }
 
+    .news .inner .title_sect p {
+        font-size: 1.4rem;
+    }
+
     .notice {
         padding: 0 10px;
     }
@@ -2412,6 +2428,10 @@ header {
     }
     .notice .inner .notice_body .notice_txt a::before {
         background-size: 15px 15px;
+    }
+
+    .news .inner .news_list .text_sect p {
+        font-size: 1.2rem;
     }
     .footer .inner .sns_btn img {
         width: 40px;
@@ -2427,8 +2447,8 @@ header {
         font-size: 1.4rem;
     }
     .footer .inner .bottom_nav .nav > li > a::after {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
     }
     .footer .footter_wrap {
         padding: 20px 10px;
@@ -2461,6 +2481,10 @@ header {
     .cont01 .outer .outer_logo img {
         height: 80px;
     }
+
+    .cont01 .outer .name {
+        font-size: 1.2rem;
+    }
     .new_software .title_img h2 {
         font-size: 3rem;
         top:22%;
@@ -2469,7 +2493,7 @@ header {
     .sale_plan .title_wrap h2 {
         font-size: 3rem;
         top:19%;
-        right: 19%;
+        left: 17%;
     }
     .popular_item .title_wrap h2 {
         font-size: 3rem;
@@ -2480,15 +2504,16 @@ header {
 
 @media screen and (max-width:320px) {
     .new_software .title_img h2 {
-        top:19%;
-        left: 23%;
+        top:15%;
+        left: 20%;
     }
     .sale_plan .title_wrap h2 {
-        right: 14%;
+        left: 12%;
     }
 
     .popular_item .title_wrap h2 {
-        top:3%;
+        top:2%;
+        left: 19%;
     }
 
 }
